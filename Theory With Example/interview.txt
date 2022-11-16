@@ -1,0 +1,6 @@
+I am Satish Hargod from Mandsaur. Currently I am living in indore.
+I have 5+ years of experience as a Backend developer.
+I have knowledge about some technology like - PHP, Node js and React js
+and I also last whole year work with blockchain projects as a Node Backend developer.
+I have also knowledge about some tools like - Git and Bitbucket for repository management, gira for task Assignment,
+slack and skype for coordination.

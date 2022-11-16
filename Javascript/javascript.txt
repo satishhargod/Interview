@@ -1,0 +1,29 @@
+# what is java script.
+JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.
+
+# What is ECMA Script
+ECMAScript is a language. ECMAScript is a specification on JavaScript. JavaScript is an implementation of the ECMAScript standard.
+
+# Hosting
+Hoisting is the concept in which Javascript, by default, moves all declarations to the top of the current scope. As such, a variable can be used before it has been declared.
+Note that Javascript only hoists declarations and not initializations.
+
+# Oprater
+JavaScript operators are symbols that are used to perform operations on operands. For example:
+Arithmetic Operators
+Comparison (Relational) Operators
+Bitwise Operators
+Logical Operators
+Assignment Operators
+Special Operators
+
+# What a callback function
+A callback the function is a function that is passed to another function as an argument and is executed after some operation has been completed.
+
+# Explain Null and Undefined in JavaScript
+Something hasn't been initialized: undefined.
+Something is currently unavailable: null. 
+
+# What is a generator function in javascript
+The generator functions are normally built using yield expressions. Each yield inside the generator function is a stopping point before the next execution cycle starts. Each execution cycle is triggered by means of next() method on the generator.
+On each next() call, the yield expression returns its value in the form of an object containing the following parameters.

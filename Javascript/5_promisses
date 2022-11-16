@@ -1,0 +1,16 @@
+function uploadOnS3() {
+    let promise = new Promise(function (resolve, reject) {
+        setTimeout(function() { 
+            resolve("data resolve")
+        }, 1000);
+        
+    });
+    return promise;
+}
+
+async function test() {
+    let promisses = await uploadOnS3();
+    console.log(promisses);
+}
+
+test();
