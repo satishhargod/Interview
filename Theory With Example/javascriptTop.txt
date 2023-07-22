@@ -1,0 +1,255 @@
+# what is java script.
+JavaScript is a dynamic programming language. we can update and change both HTML and CSS. We can use this language for daynamic web application also we can use for server side application also. 
+
+# What is ECMA Script
+ECMAScript is a language. ECMAScript is a specification on JavaScript. JavaScript is an implementation of the ECMAScript standard.
+ES6 = 2015 jun
+ES10 Latest
+
+# Hosting
+Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+
+# Oprater
+JavaScript operators are symbols that are used to perform operations on operands. For example:
+Arithmetic Operators
+Comparison (Relational) Operators
+Bitwise Operators
+Logical Operators
+Assignment Operators
+Special Operators
+
+# What a callback function
+A callback the function is a function that is passed to another function as an argument and is executed after some operation has been completed.
+
+# Explain Null and Undefined in JavaScript
+Something hasn't been initialized: undefined.
+Something is currently unavailable: null. 
+
+# What is a generator function in javascript
+The generator functions are normally built using yield expressions. Each yield inside the generator function is a stopping point before the next execution cycle starts. Each execution cycle is triggered by means of next() method on the generator.
+On each next() call, the yield expression returns its value in the form of an object containing the following parameters.
+
+#What is NaN property in JavaScript?
+NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
+typeof of NaN will return a Number.
+To check if a value is NaN, we use the isNaN() function,
+Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
+
+Example 
+isNaN("Hello")  // Returns true
+isNaN(345)   // Returns false
+isNaN('1')  // Returns false, since '1' is converted to Number type which results in 0 ( a number) 
+isNaN(true) // Returns false, since true converted to Number type results in 1 ( a number)
+isNaN(false) // Returns false
+isNaN(undefined) // Returns true
+
+
+#Explain passed by value and passed by reference.
+In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
+
+#What is an Immediately Invoked Function in JavaScript?
+An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
+
+#Explain “this” keyword.
+The “this” keyword refers to the object that the function is a property of.
+The value of the “this” keyword will always depend on the object that is invoking the function.\
+
+function doSomething() {
+  console.log(this);
+}
+   
+doSomething();
+
+var obj1 = {
+    address : "Mumbai,India",
+    getAddress: function(){
+    console.log(this.address); 
+  }
+}
+   
+var getAddress = obj1.getAddress;
+var obj2 = {name:"akshay"};
+obj2.getAddress();   
+
+#Explain call(), apply() and, bind() methods.
+1. call():
+It’s a predefined method in javascript.This method invokes a method (function) by specifying the owner object. call() method allows an object to use the method (function) of another object.
+function sayHello(){
+  return "Hello " + this.name;
+}
+        
+var obj = {name: "Sandy"};        
+sayHello.call(obj);        
+// Returns "Hello Sandy"
+
+call() method allows an object to use the method (function) of another object.
+var person = {
+  age: 23,
+  getAge: function(){
+    return this.age;
+  }
+}        
+var person2 = {age:  54};
+person.getAge.call(person2);   
+
+call() accepts arguments:
+
+function saySomething(message){
+  return this.name + " is " + message;
+}     
+var person4 = {name:  "John"};     
+saySomething.call(person4, "awesome");
+
+2.apply()
+
+The apply method is similar to the call() method. The only difference is that,
+
+call() method takes arguments separately whereas, apply() method takes arguments as an array.
+
+3. bind():
+
+This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+Example with arguments:
+
+#What is currying in JavaScript?
+Currying is an advanced technique to transform a function of arguments n, to n functions of one or fewer arguments.
+
+For Example, if we have a function f(a,b), then the function after currying, will be transformed to f(a)(b).
+
+function add (a) {
+  return function(b){
+    return a + b;
+  }
+}
+add(3)(4) 
+
+Example - 
+function multiply(a,b){
+    return a*b;
+  }
+  
+  function currying(fn){
+    return function(a){
+      return function(b){
+        return fn(a,b);
+      }
+    }
+  }
+  
+  var curriedMultiply = currying(multiply);
+  
+  multiply(4, 3); // Returns 12
+  
+  curriedMultiply(4)(3); // Also returns 12
+
+#Explain Scope and Scope Chain in javascript.
+
+There are three types of scopes in JS:
+
+Global Scope
+Local or Function Scope
+Block Scope
+
+Global Scope: Variables or functions declared in the global namespace have global scope, which means all the variables and functions having global scope can be accessed from anywhere inside the code.
+
+Function Scope: Any variables or functions declared inside a function have local/function scope, which means that all the variables and functions declared inside a function, can be accessed from within the function and not outside of it.
+
+Block Scope: Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope. Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
+
+
+#Explain Closures in JavaScript.
+
+Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.
+
+#Mention some advantages of javascript.
+There are many advantages of javascript. Some of them are 
+
+Javascript is executed on the client-side as well as server-side also. There are a variety of Frontend Frameworks that you may study and utilize. However, if you want to use JavaScript on the backend, you'll need to learn NodeJS. It is currently the only JavaScript framework that may be used on the backend.
+Javascript is a simple language to learn.
+Web pages now have more functionality because of Javascript.
+To the end-user, Javascript is quite quick.
+
+#What are callbacks?
+Functions that are used as an argument to another function are called callback functions. 
+function divideByHalf(sum){
+  console.log(Math.floor(sum / 2));
+}
+
+function multiplyBy2(sum){
+  console.log(sum * 2);
+}
+
+function operationOnSum(num1,num2,operation){
+  var sum = num1 + num2;
+  operation(sum);
+}
+
+operationOnSum(3, 3, divideByHalf); // Outputs 3
+
+operationOnSum(5, 5, multiplyBy2); // Outputs 20
+
+#Differences between declaring variables using var, let and const.
+Before the ES6 version of javascript, only the keyword var was used to declare variables. With the ES6 Version, keywords let and const were introduced to declare variables.
+keyword	            const	let	    var
+global scope	    no	    no	    yes
+function scope	    yes	    yes	    yes
+block  scope	    yes	    yes	    no
+can be reassigned	no	    yes	    yes
+
+#What is Object Destructuring?
+Object destructuring is a new way to extract elements from an object or an array.
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Explain call(), apply() and, bind() methods.
+
+call will call a particular function with the given this
+apply will call a particular function with the given this in array
+bind will attact given this keyword with function and return a new function
+
+What a callback function.
+   callback function is a function which we as a parameter in another function, 
+
+
+What is a callback hell
+      when we pass pass callback inside callback inside another callback and so on, it is known as callback hell.
+
+What is a closures
+  when an a function access a variables from outside it forms a closures, 
+  we can access variables from outer scope bcoz of closures
+
+What is a event listeners
+
+
+What is promise in javascript.
+    promise is an object which can have three values, pending, resolved & rejected
+    initially it will have pending state and after that it will go into rejcted and resolved state.
+    we can handle promise with then catch or async await
+
+
+What is async/await
+  async await is just syntactical sugar over then catch to handle promises.
+
+
+Deffrence between promise and async/await
+      in async await code is more readable, code becomes messy when using multiple nested then catch
+      in async await if we are handling multiple promises we can just have to use single catch statement but in .then.catch we have to use .catch multiple times
+      in async await if we are handling multiple promises we only have to write await keyword again but in .then.catch we have to create new then catch 
+
+
+
+What is synchronous and asynchronous
+        Synchronous or Synchronized means "connected", or "dependent" in some way. In other words, two synchronous tasks must be aware of one another, and one task must execute in some way that is dependent on the other, such as wait to start until the other task has completed.
+
+        sync means we can execute one after another
+        async means we can run mutiple task parallely

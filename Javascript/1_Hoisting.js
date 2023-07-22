@@ -1,6 +1,18 @@
 
 //Hoisting is a mechanism where variables and function declarations are moved to the top of their scope before code execution.
 
+console.log(foo); // Uncaught ReferenceError: foo is not defined
+foo = 'foo';      // Assigning a variable that's not declared is valid
+
+console.log(foo); // undefined
+var foo = 'foo';     
+
+console.log(foo); // Uncaught ReferenceError: foo is not defined
+let foo = 'foo';  // Assigning a variable that's not declared is valid
+
+console.log(foo); // Uncaught ReferenceError: foo is not defined
+const foo = 'foo';// Assigning a variable that's not declared is valid
+
 ///////////////////////////////
 sum(4,5)
 

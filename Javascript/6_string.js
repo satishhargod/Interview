@@ -25,3 +25,20 @@ do
 while (counter > 0 );
 
 console.log("newString", newString)
+
+/////////////////////////////////////////////////////////////
+
+var string = "Welcome to this Javascript Guide!";
+
+// Output becomes !ediuG tpircsavaJ siht ot emocleW
+var reverseEntireSentence = reverseBySeparator(string, "");
+
+// Output becomes emocleW ot siht tpircsavaJ !ediuG
+var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
+
+//console.log(reverseEachWord)
+function reverseBySeparator(string, separator) {
+   let data =  string.split(separator).reverse().join(separator)
+  console.log(data)
+  return data;
+}
