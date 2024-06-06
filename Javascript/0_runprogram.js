@@ -1,14 +1,126 @@
-let data = [0, 1 ,2,3,4,5,6,7,8, 11, 12, 13, 14, 15, 16, 17, 18, 10 ];
- data = data.sort((a,b)=> a-b)
- //console.log(data);
-let newData = []
-for (var i = 0; i < data.length; i++){
-    if(i != data[i]){
-        newData.push(i)
-        break;    
-    }    
-}
- console.log(newData)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for (var i = 1; i <= 5; i++) {
+//   (function(count){
+//     setTimeout(function() {
+//       console.log(`Counted till ${count} after ${count} seconds`);
+//     }, 1000 * i)
+//   })(i)  
+// }
+// console.log(car)
+// let car ;
+
+// console.log("first");
+// setImmediate(() => {
+//     console.log("second");
+// });
+// console.log("third");
+
+
+
+// let arr = ["Mike","Matt","Nancy","Adam", "Matt", "Jenny", "Nancy", "Carl"];
+// // let arr = [1,4,5,6,7,8,9,10,11,12,12,14];
+// arr = arr.filter((value, index, array) => 
+//   array.indexOf(value) === index
+// )
+
+// console.log("Array", arr)
+
+
+
+
+
+
+// function destroy(id) {
+//     print({ stage: 'destroy', id })
+// }
+  
+// const hook = asyncHooks.createHook(
+//     { init, before, after, destroy })
+
+// const saySomething =  (message)=> {
+//     console.log("messagemessage", message)
+//     return this.name + " is " + message;
+// }     
+// var person4 = {
+//     name:  "John"
+// };     
+
+// console.log("----", saySomething.call(person4, "awesome"))
+
+
+// const person = {
+//     firstName:"John",
+//     lastName: "Doe",
+//     fullName: function () {
+//       return this.firstName + " " + this.lastName;
+//     }
+//   }
+  
+//   const member = {
+//     firstName:"Hege",
+//     lastName: "Nilsen",
+//   }
+  
+//   let fullName = person.fullName.bind(member);
+
+// console.log("fullName", fullName())
+
+
+
+// let data = [0, 1 ,2,3,4,5,6,7,8, 11, 12, 13, 14, 15, 16, 17, 18, 10 ];
+//  data = data.sort((a,b)=> a-b)
+//  //console.log(data);
+// let newData = []
+// for (var i = 0; i < data.length; i++){
+//     if(i != data[i]){
+//         newData.push(i)
+//         break;    
+//     }    
+// }
+//  console.log(newData)
 
 
 
@@ -82,3 +194,10 @@ for (var i = 0; i < data.length; i++){
 
 // console.log(a);
 // var a=10
+
+
+// const data = [[5,'a'],[3,'b'],[4,'c']]
+// const newData = JSON.stringify(data)
+// console.log("newData", newData.replace(/],/gi,']'))
+
+// output "[]"

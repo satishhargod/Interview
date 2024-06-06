@@ -35,19 +35,39 @@
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function countPalindromes(str) {
+// function countPalindromes(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     for (let j = i + 1; j <= str.length; j++) {
+//       let subStr = str.substring(i, j);
+//       console.log("subStr", subStr)
+//       if (subStr === subStr.split('').reverse().join('')) {
+//         //console.log("subStr", subStr)
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countPalindromes("bcacbf"))
+
+
+function isPalindrome(str){
+  const len = str.length
+  let msg = "isPalindrome"
   let count = 0;
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < len; i++) {
     for (let j = i + 1; j <= str.length; j++) {
       let subStr = str.substring(i, j);
-      if (subStr === subStr.split('').reverse().join('')) {
-        console.log("subStr", subStr)
-        count++;
+      if(subStr === subStr.split('').reverse().join('')){
+        if(subStr.length > 1){
+          console.log("subStr", subStr)
+        }
+        count++
       }
     }
   }
-  return count;
+ return msg
 }
-
-console.log(countPalindromes("bcacbf"))
-
+console.log(isPalindrome("madam"))

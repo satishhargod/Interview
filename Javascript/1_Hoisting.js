@@ -65,3 +65,12 @@ for (let j = 0; j < 5; j++) {
   
 console.log(i); // 5
 console.log(j); // ReferenceError: j is not defined
+
+
+for (var i = 1; i <= 5; i++) {
+    (function (count) {
+        setTimeout(function() {
+            console.log(`Counted till ${count} after ${count} seconds`);
+        }, 1000 * i);
+    })(i);
+}
