@@ -23,5 +23,6 @@ function bubbleSort(arr){
   }
   return arr;
 }
-  let arr = [5, 3, 8, 4, 2];
-  console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
+
+let arr = [5, 3, 8, 4, 2];
+console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
