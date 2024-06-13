@@ -1,0 +1,63 @@
+
+# Date Only
+
+const date = new Date().toLocaleDateString('en-US');
+console.log(date); // 5/28/2024
+
+# Formatted Date
+const date = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+console.log(date); // May 28, 2024
+
+# Formatted Date and Time
+
+const date = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric'
+});
+console.log(date); // May 28, 2024 at 7:47 AM
+
+# Date, Time Including Seconds
+
+const date = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric'
+});
+console.log(date); // May 28, 2024 at 7:47:51 AM
+
+# Date, Time Including Day of the Week
+
+const date = new Date().toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric'
+});
+console.log(date); // Tuesday, May 28, 2024 at 7:48:18 AM
+
+# timeZone: 'UTC'
+
+const date = new Date().toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZone: 'UTC'
+});
+
+console.log(date);

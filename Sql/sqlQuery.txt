@@ -1,0 +1,71 @@
+# Write sql query  to calculate age based on Date of Birth
+
+SELECT 
+    email,
+    birthDate,
+    FLOOR(DATEDIFF(CURDATE(), birthDate) / 365.25) AS age
+FROM 
+    iknowa.users;
+
+
+# Write sql query  to calculate age based on Date of Birth and count according age
+
+SELECT 
+    FLOOR(DATEDIFF(CURDATE(), birthDate) / 365.25) AS age,
+    COUNT(*) AS count
+FROM 
+    iknowa.users
+GROUP BY 
+    age
+ORDER BY 
+    age;
+
+#Write sql query  to calculate age based on Date of Birth and count according age ranges (e.g., 15 to 20, 20 to 25, 25 to 30) 
+
+SELECT
+    CASE
+        WHEN FLOOR(DATEDIFF(CURDATE(), birthDate) / 365.25) BETWEEN 15 AND 19 THEN '15-19'
+        WHEN FLOOR(DATEDIFF(CURDATE(), birthDate) / 365.25) BETWEEN 20 AND 24 THEN '20-24'
+        WHEN FLOOR(DATEDIFF(CURDATE(), birthDate) / 365.25) BETWEEN 25 AND 29 THEN '25-29'
+        ELSE 'Other'
+    END AS age_range,
+    COUNT(*) AS count
+FROM
+    iknowa.users
+GROUP BY
+    age_range
+ORDER BY
+    age_range;
+
+
+# Find the total number of streams by date.
+SELECT date,
+     SUM(number_of_streams) AS total_number_of_streams
+FROM movie_streaming
+GROUP BY date;
+
+
+# Find the total number of streams by date and director.
+
+SELECT date,
+     director,
+     SUM(number_of_streams) AS total_number_of_streams
+FROM movie_streaming
+GROUP BY date, director;
+
+# Find the total number of streams by date and director. Show only dates with a total number of streams above 740.
+
+SELECT date,
+     director,
+     SUM(number_of_streams) AS total_number_of_streams
+FROM movie_streaming
+GROUP BY date, director
+HAVING SUM(number_of_streams) > 740;
+
+# Get avg salary of month
+
+
+SELECT department,
+     AVG(salary) AS average_salary
+FROM salaries
+GROUP BY department, month;

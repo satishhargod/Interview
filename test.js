@@ -1,20 +1,10 @@
-let string = 'Write, edit and Run your javascript code using JS Online Compiler';
-const data = string.split("")
-let obj = {}
-let highstCount = 1;
- let highValue = {}
-for (const iterator of data) {
-    if(obj.hasOwnProperty(iterator)){
-        const count = obj[iterator]+1
-        if(highstCount < count){
-            highstCount = count
-            highValue = {[iterator]:count}
-        }
-        obj = {...obj, [iterator]:count}
-    }else{
-        if(iterator !== ' '){
-            obj = {...obj, [iterator]:1}
-        }
-    }    
-}
-console.log(highValue)
+const date = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZone: 'UTC'
+  });
+  console.log(date); // May 28, 2024 at 7:47:51 AM
