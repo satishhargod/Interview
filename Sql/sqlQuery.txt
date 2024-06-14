@@ -64,7 +64,6 @@ HAVING SUM(number_of_streams) > 740;
 
 # Get avg salary of month
 
-
 SELECT department,
      AVG(salary) AS average_salary
 FROM salaries
