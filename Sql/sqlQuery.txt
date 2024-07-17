@@ -68,3 +68,112 @@ SELECT department,
      AVG(salary) AS average_salary
 FROM salaries
 GROUP BY department, month;
+
+# Write sql query  change value like status is Active to A, Pendding To P, Cancel to C
+
+UPDATE orders
+SET status = CASE 
+    WHEN status = 'Active' THEN 'A'
+    WHEN status = 'Pending' THEN 'P'
+    WHEN status = 'Cancel' THEN 'C'
+    ELSE status -- Retain original value if none of the conditions are met
+END;
+
+SELECT 
+    order_id,
+    CASE 
+        WHEN status = 'Active' THEN 'A'
+        WHEN status = 'Pending' THEN 'P'
+        WHEN status = 'Cancel' THEN 'C'
+        ELSE status -- Retain original value if none of the conditions are met
+    END AS status
+FROM orders;
+
+#Gorup BY
+
+SELECT 
+    status,
+    COUNT(*) AS count
+FROM orders
+GROUP BY status;
+
+
+# Finding the difference between the highest and lowest salary in each department:
+
+SELECT 
+    department, 
+    MAX(salary) - MIN(salary) AS salary_range
+FROM employees
+GROUP BY department;
+
+# Calculating the cumulative sum within each group:
+
+SELECT 
+    department,
+    employee_id,
+    salary,
+    SUM(salary) OVER (PARTITION BY department ORDER BY employee_id) AS cumulative_salary
+FROM employees;
+
+# Finding duplicate rows in a table:
+
+SELECT 
+    employee_name, 
+    COUNT(*) AS count
+FROM employees
+GROUP BY employee_name
+HAVING COUNT(*) > 1;
+
+# Combining GROUP BY with JOIN:
+
+SELECT 
+    d.department_name, 
+    COUNT(e.employee_id) AS employee_count, 
+    AVG(e.salary) AS avg_salary
+FROM departments d
+JOIN employees e ON d.department_id = e.department_id
+GROUP BY d.department_name;
+
+# Finding the top N highest salaries in each department:
+
+SELECT 
+    e1.department, 
+    e1.employee_id, 
+    e1.salary
+FROM employees e1
+WHERE e1.salary >= (
+    SELECT 
+        MAX(e2.salary)
+    FROM employees e2
+    WHERE e2.department = e1.department
+    GROUP BY e2.department
+    ORDER BY MAX(e2.salary) DESC
+    LIMIT 3
+)
+ORDER BY e1.department, e1.salary DESC;
+
+# Using HAVING to filter groups:
+
+SELECT 
+    department, 
+    AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+
+# Getting the count and average salary by department:
+
+SELECT 
+    department, 
+    COUNT(*) AS employee_count, 
+    AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department;
+
+# Finding the maximum value in each group:
+
+SELECT 
+    department, 
+    MAX(salary) AS max_salary
+FROM employees
+GROUP BY department;
