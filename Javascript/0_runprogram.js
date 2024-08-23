@@ -1,27 +1,6 @@
+const ages = [3, 10, 18, 20, 22];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(ages.forEach((age)=>{ return age > 18;}));
 
 
 

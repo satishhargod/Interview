@@ -70,9 +70,8 @@ function isPalindrome(str){
   }
  return msg
 }
+
 console.log(isPalindrome("madam"))
-
-
 function isPalindrome(str) {
   str = str.replace(/\W/g, '').toLowerCase();
   return (str == str.split('').reverse().join(''));
